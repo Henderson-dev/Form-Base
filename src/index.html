@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <main class="d-flex align-items-center">
+
+        < class="container">
+
+            <form id="checkout-primary" name="checkout" method="post" class="row checkout woocommerce-checkout d-flex justify-content-center" action="" enctype="multipart/form-data" novalidate="novalidate"></form>            
+
+                <section id="step-02" class="checkout_content col-xl-6 d-flex flex-column justify-content-center mb-5 pb-3 mb-xl-0 pb-xl-0 hidden-element">
+
+                        <section class="woocommerce-billing-fields row g-5">
+
+                            <div class="col-md-6">
+                                <label for="billing_persontype">Tipo de Documento *</label>
+                                <select class="wc-ecfb-select select" name="billing_persontype" id="billing_persontype" data-type="select" tabindex="5">
+                                    <option value="0">Pessoa Física / Pessoa Jurídica</option>
+                                    <option value="2">Pessoa Jurídica</option>
+                                    <option value="1">Pessoa Física</option>
+                                </select>
+                            </div>
+                            <!-- Tipo de Pessoa -->
+
+                            <div class="col-md-6" id="box-document">
+                                <label for="billing_cnpj">Documento *</label>
+                                <input type="tel" class="input-text" name="billing_cnpj" id="billing_cnpj"  value="" data-type="tel" placeholder="CNPJ / CPF" tabindex="6" disabled="true">
+                                <input type="tel" class="input-text d-none" name="billing_cpf" id="billing_cpf" value="" data-type="tel" placeholder="CPF" tabindex="6">                                
+                            </div>
+                            <!-- Documento CNPJ / CPF -->
+
+                            <div class="col-md-12 d-none" id="box-company">
+                                <label for="billing_company">Razão Social *</label>
+                                <input type="text" class="input-text" name="billing_company" id="billing_company" placeholder="Inserir razão social do CNPJ" value="" data-type="text" autocomplete="organization" tabindex="6">                                
+                            </div>
+                            <!-- Nome Empresa -->
+
+                            <div class="col-md-6">
+                                <label for="billing_postcode">CEP *</label>
+                                <input type="text" class="input-text" name="billing_postcode" id="billing_postcode" placeholder="_____-____" value="" data-type="text" aria-required="true" autocomplete="postal-code" tabindex="7">
+                            </div>
+                            <!-- CEP -->
+
+                            <div class="col-md-6">
+                                <label for="billing_address_1">Endereço *</label>
+                                <input type="text" class="input-text" name="billing_address_1" id="billing_address_1" placeholder="Nome da rua/av." value="" data-type="text" aria-required="true" autocomplete="address-line1" tabindex="8">
+                            </div>
+                            <!-- Endereço Rua -->
+
+                            <div class="col-md-6">
+                                <label for="billing_number">Número *</label>
+                                <input type="text" class="input-text" name="billing_number" id="billing_number" placeholder="Número do endereço" value="" data-type="text" aria-required="true" tabindex="9">
+                            </div>
+                            <!-- Endereço Número -->
+
+                            <div class="col-md-6">
+                                <label for="billing_neighborhood">Bairro *</label>
+                                <input type="text" class="input-text" name="billing_neighborhood" id="billing_neighborhood" placeholder="Nome do bairro" value="" data-type="text" aria-required="true" tabindex="10">
+                            </div>
+                            <!-- Endereço bairro -->
+                            
+                            <div class="col-md-6">
+                                <label for="billing_state">Estado *</label>
+                                <select name="billing_state" id="billing_state" class="state_select arquivar_billing_state select" data-type="state" aria-required="true" autocomplete="address-level1" data-placeholder="Informe seu estado" data-input-classes="arquivar_billing_state" data-label="Estado" tabindex="11">
+                                    <option value="">Selecione um estado…</option>
+                                    <option value="AC">Acre</option>
+                                    <option value="AL">Alagoas</option>
+                                    <option value="AP">Amapá</option>
+                                    <option value="AM">Amazonas</option>
+                                    <option value="BA">Bahia</option>
+                                    <option value="CE">Ceará</option>
+                                    <option value="DF">Distrito Federal</option>
+                                    <option value="ES">Espírito Santo</option>
+                                    <option value="GO">Goiás</option>
+                                    <option value="MA">Maranhão</option>
+                                    <option value="MT">Mato Grosso</option>
+                                    <option value="MS">Mato Grosso do Sul</option>
+                                    <option value="MG">Minas Gerais</option>
+                                    <option value="PA">Pará</option>
+                                    <option value="PB">Paraíba</option>
+                                    <option value="PR">Paraná</option>
+                                    <option value="PE">Pernambuco</option>
+                                    <option value="PI">Piauí</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="RN">Rio Grande do Norte</option>
+                                    <option value="RS">Rio Grande do Sul</option>
+                                    <option value="RO">Rondônia</option>
+                                    <option value="RR">Roraima</option>
+                                    <option value="SC">Santa Catarina</option>
+                                    <option value="SP">São Paulo</option>
+                                    <option value="SE">Sergipe</option>
+                                    <option value="TO">Tocantins</option>
+                                </select>
+                            </div>
+                            <!-- Estado -->
+
+                            <div class="col-md-6">
+                                <label for="billing_name">Cidade *</label>
+                                <select class="arquivar_billing_city select" name="billing_city" id="billing_city" data-type="select" tabindex="12"> 
+                                    <option value="">Informe sua cidade</option><option class="arquivar_city_option" value="Abadia dos Dourados">
+                                    Abadia dos Dourados
+                                    </option>
+                                    <option class="arquivar_city_option" value="Abaeté">
+                                    Abaeté
+                                    </option>
+                                    <option class="arquivar_city_option" value="Barroso">
+                                    Barroso
+                                    </option>
+                                    <option class="arquivar_city_option" value="Bela Vista de Minas">
+                                    Bela Vista de Minas
+                                    </option>
+                                    <option class="arquivar_city_option" value="Belmiro Braga">
+                                    Belmiro Braga
+                                    </option>
+                                    <option class="arquivar_city_option" value="Belo Horizonte">
+                                    Belo Horizonte
+                                    </option>
+                                    <option class="arquivar_city_option" value="Belo Oriente">
+                                    Belo Oriente
+                                    </option>
+                                    <option class="arquivar_city_option" value="Belo Vale">
+                                    Belo Vale
+                                    </option>
+                            </select>                                
+                            </div>
+                            <!-- Cidade -->
+
+                            <div class="col-12">
+                                <input type="button" class="btn" name="" id="action-step-02" value="Avançar" data-value="Avançar">
+                            </div>
+
+                            <div id="msg-step-02" class="col-12 d-flex justify-content-center">
+                                <span></span>
+                            </div>                            
+
+                        </section>
+                    
+                </section>
+                <!-- // step-02 -->
+
+            </form>
+
+        </div> 
+
+    </main>
+
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.4.0/purify.min.js"></script> -->
+    <script type="text/javascript" src="assets/js/purify.min.js"></script>
+    <!-- <script src="https://unpkg.com/imask"></script> -->
+    <script type="text/javascript" src="assets/js/imask.js"></script>
+    <script type="text/javascript" src="assets/js/card.js"></script>
+    <script type="text/javascript" src="assets/js/checkout-main.js"></script>
+    <script type="text/javascript" src="assets/js/checkout-funtions.js"></script>
+
+    <!-- Função executada como depenência de desenvolvimento -->
+    <script type="text/javascript" src="assets/js/function-dev-dependence.js"></script>    
+</body>
+</html>
