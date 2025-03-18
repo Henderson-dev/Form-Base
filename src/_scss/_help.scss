@@ -1,0 +1,425 @@
+/*
+-------------------------
+AJUDA
+------------------------
+
+Seletores
+---------
+*/
+
+#topo .container-fluid div:first-child[class^="col-"] {
+  padding-right: 0;
+}
+
+#topo .container-fluid div[class^="col-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+// Seletor Child
+.footer-sepadador .redes ul li:last-child {
+  margin-right: 0;
+}
+
+// Transition
+// ----------
+a {
+  transition: all 0.3s ease-in-out;
+  transition: 300ms all cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 300ms all cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// Gradiente
+// ---------
+.bg {
+  background: linear-gradient(180deg, rgba(0, 2, 40, 0.83) 9.68%, rgba(0, 2, 40, 0) 88.52%);
+  background-color: rgba(0, 2, 40, 0.69);
+  background-blend-mode: luminosity;
+}
+
+// Formularios
+// -----------
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  background: #ffffff;
+}
+input[type="submit"] {
+  background: #ffffff;
+}
+
+
+// // Select com estados brasileiros
+// <select name="estados-brasil">
+// 	<option value="AC">Acre</option>
+// 	<option value="AL">Alagoas</option>
+// 	<option value="AP">Amapá</option>
+// 	<option value="AM">Amazonas</option>
+// 	<option value="BA">Bahia</option>
+// 	<option value="CE">Ceará</option>
+// 	<option value="DF">Distrito Federal</option>
+// 	<option value="ES">Espírito Santo</option>
+// 	<option value="GO">Goiás</option>
+// 	<option value="MA">Maranhão</option>
+// 	<option value="MT">Mato Grosso</option>
+// 	<option value="MS">Mato Grosso do Sul</option>
+// 	<option value="MG">Minas Gerais</option>
+// 	<option value="PA">Pará</option>
+// 	<option value="PB">Paraíba</option>
+// 	<option value="PR">Paraná</option>
+// 	<option value="PE">Pernambuco</option>
+// 	<option value="PI">Piauí</option>
+// 	<option value="RJ">Rio de Janeiro</option>
+// 	<option value="RN">Rio Grande do Norte</option>
+// 	<option value="RS">Rio Grande do Sul</option>
+// 	<option value="RO">Rondônia</option>
+// 	<option value="RR">Roraima</option>
+// 	<option value="SC">Santa Catarina</option>
+// 	<option value="SP">São Paulo</option>
+// 	<option value="SE">Sergipe</option>
+// 	<option value="TO">Tocantins</option>
+// </select>
+
+
+// Caminho da pasta images dentro do css
+// -------------------------------------
+.bg {
+  background-image: url("../images/ico_telefone.svg");
+}
+
+// SVG hover mudando de cor
+// ------------------------
+#ferramentas .bloco-consultoria a:hover svg path {
+  fill: #fff;
+}
+&__hero {
+  .col:first-child {
+    svg > path[fill="white"] {
+      fill: $primary;
+    }
+    svg > path[fill="#231F20"] {
+      fill: $white;
+    }
+  }
+}
+
+
+// Coloca o SVG branco no hover
+// Para elemento IMG:
+#ferramentas .bloco-programas a:hover img {
+  filter: brightness(0) invert(1);
+  transition: .3s ease;
+}
+
+// Para elemento SVG em código no html:
+svg:hover path{
+ fill: #fff;
+  transition: .3s ease;
+}
+
+// https://codepen.io/mateuscarvalho007/pen/mdPdzOg
+// https://css-tricks.com/change-color-of-svg-on-hover/
+
+/*
+
+Base 64 encode SVG
+https://base64.guru/converter/encode/image/svg
+
+
+--------------------------------------------------------------------
+Gerador de meta tag hreflang para indicar as urls de idiomas do site
+--------------------------------------------------------------------
+https://www.aleydasolis.com/english/international-seo-tools/hreflang-tags-generator/
+
+
+
+----------------------
+Gerador de Grid Layout
+----------------------
+https://grid.layoutit.com/
+https://cssgrid-generator.netlify.app/
+
+
+----------------
+Tamanho de telas
+----------------
+Site com tamanho das telas dos dispositivos atualizadas
+https://yesviz.com/devices.php
+
+
+
+
+Dimensões de viewports:
+Desktops maiores = 1920px
+Notebooks maiores = 1440px
+Notebooks = 1366px
+Tablets maiores = 1024px
+Tablets = 768px
+
+
+Smartphones
+425px - Padrão do google chrome
+414px - Iphone XI, Iphone 6,7,8 plus
+412px - Galaxy S10
+375px - Iphone 6,7,8
+360px - Galaxy S10e
+320px - Iphone 4
+
+
+
+-----------------------------
+Conversor de base 64 para SVG
+-----------------------------
+https://base64.guru/converter/encode/image/svg
+
+
+Documentação Booststrap
+https://getbootstrap.com.br/docs/4.1/utilities/flex/
+https://getbootstrap.com.br/docs/4.1/components/forms/
+
+
+AOS Animation
+https://michalsnik.github.io/aos/
+https://github.com/michalsnik/aos
+https://css-tricks.com/aos-css-driven-scroll-animation-library/
+
+
+
+
+Técnica para calcular o Rem das fontes
+html{
+font-size=62.5%;
+box-sizing: border-box;
+}
+
+1rem = 10px
+1.7rem = 17px
+
+
+Para centralizar as sections do site com uma largura máxima
+usar max-widht: 128rem.
+margin: 0 auto
+
+
+
+
+------------
+
+Sass avançado
+--------------------
+
+margin: {
+  top: 5px;
+  bottom: 10px;
+  right: 10px;
+}
+
+
+Criando arquivo para ser importado e Indicar que não queremos compilar o arquivo.
+Basta colocar o _ na frente do arquivo:
+_nome_do_arquivo.scss
+
+
+Variáveis
+$my-var: 10px;    //variavel global
+
+.classe{
+   $my-var2: red;  // váriavel só funciona dentro da classe
+   color: $my-var2;
+}
+
+
+Declarando variáveis globais dentro da classe
+.classe{
+   $my-var2: red !global;  // váriavel só funciona dentro da classe
+   color: $my-var2;
+}
+
+
+Declarando variáveis com valor defalut se já foi declarada antes
+$my-var2: blue;
+.classe{
+   $my-var2: red !default;  // váriavel só funciona dentro da classe
+   color: $my-var2;
+}
+
+
+Interpolação de variáveis
+---------------------------------
+$a: 35px;
+.my-class-#{$a}{
+     color: red;
+}
+
+
+Mixins
+--------
+Criando variavel com varias propriedades
+@mixin erro-box{
+   color: red;
+   border: 2px solid red;
+}
+
+.my-box{
+  @include erro-box;
+}
+
+
+Passando valores para o mixin
+----------------------------------------
+@mixin erro-box ($border-widht: 10px){  // 10px é valor padrão se o usuário não passar nada
+   color: red;
+   border: $border-widht solid red;
+}
+
+.my-box{
+  @include erro-box(10px);
+}
+
+
+Extend
+---------
+.btn{
+   min-width: 150px;
+   padding: 10px 20px;
+}
+
+.btn-confirm{
+  bacground-color: green;
+  color: white;
+  @extend .btn;
+}
+
+No resultado final, será a junção da classe .btn com a classe .btn-confirm:
+.btn, .btn-confirm{
+   min-width: 150px;
+   padding: 10px 20px;
+}
+
+
+
+CSS Avançado
+--------------------
+
+Pega dinamicamente um atributo e joga no CSS através de pseudo-elemento
+<div data-numero="123">Texto</div>
+
+Css
+div::after{
+  content: attr(data-numero);
+}
+
+
+
+Quebra de linha apenas no desktop
+<br class="d-none d-lg-block">
+
+-----------------
+Sliders
+-----------------
+https://swiperjs.com/get-started
+
+*/
+
+
+
+/*
+----------------------------
+Media queries bootstrap
+----------------------------
+*/
+
+/*
+=====================================================
+Small devices (landscape phones, 576px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+@include media-breakpoint-up(sm) {
+}
+// 576px
+
+
+/*
+=====================================================
+Medium devices (tablets, 768px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+@include media-breakpoint-up(md) {
+
+}
+// 768px
+
+/*
+=====================================================
+Large devices (desktops, 992px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+@include media-breakpoint-up(lg) {
+
+}
+// 992px
+
+/*
+=====================================================
+Extra large devices (large desktops, 1200px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+@include media-breakpoint-up(xl) {
+
+}
+// 1200px
+
+
+@include media-breakpoint-up(xxl) {
+
+}
+// 1400px
+
+
+/*
+----------------------------
+Media queries personalizadas
+----------------------------
+Para resolver problemas comuns em tamanhos de telas
+*/
+
+// Bootstrap Xl
+@include media-breakpoint-up(xl) {
+}
+// 1200px
+// Controle para telas notbook 1366
+@media (min-width: 1366px) {
+}
+//1366px
+// Controle para telas grandes full hd
+@media (min-width: 1380px) {
+}
+//1380px
+
+
+
+//--------
+
+// Controle para telas grandes full hd
+@media (min-width: 1470px) {
+}
+// 1470px
+
+// Controle para telas notbook de altura de 768px
+@media (max-height: 768px) {
+}
+
+// Media query para telas 720 HD Telvision
+@media screen and (max-height: 768px) and (max-width: 820px) {
+}
+
+// Controle para telas notbook de altura de 768px
+@media screen and (max-height: 768px) and (min-width: 1366px) {
+}
+
+
+

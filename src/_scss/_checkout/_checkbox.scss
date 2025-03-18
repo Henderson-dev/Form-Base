@@ -1,0 +1,93 @@
+.wrap-checkbox{
+    a{
+        cursor: pointer;
+        position: relative;
+        border-bottom: 1px solid $text-color;
+        padding-bottom: 1px;
+        text-decoration: none;
+        &:hover{
+            opacity: 0.8;
+            border-bottom: 1px solid #737373;
+            transition: all .25s ease-in-out;
+        }
+    }
+    .check-purple{
+        display: flex;
+        padding-top: 3px;
+        input[type="checkbox"]{
+            display: block;
+        }
+        .label_acept {
+            width: 94%;
+            cursor: pointer;
+        }        
+        .check-input {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -ms-appearance: none;
+            -o-appearance: none;
+            appearance: none;
+            position: relative;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            min-height: 20px;
+            min-width: 20px;            
+            transition: all 0.15s ease-out 0s;
+            background-color: #fff;
+            border: 2px solid #2a2352;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            margin-right: 10px;
+            outline: none;
+            position: relative;
+            z-index: 5;
+        }
+        .check-input:hover {
+            background: #eee;
+            border: 2px solid #5540c9;
+        }
+        .check-input:checked {
+            background: #5540c9;
+        }
+        .check-input:checked::before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            display: block;
+            background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M15.6103%202.29421C15.1327%201.86517%2014.4032%201.91071%2013.981%202.39593L6.39023%2011.1182L1.96872%206.6448C1.51698%206.18781%200.786143%206.18938%200.336335%206.64845C-0.113472%207.1074%20-0.111907%207.8499%200.339824%208.30702L5.62931%2013.6583C5.85465%2013.8862%206.16259%2014.0096%206.4804%2013.9994C6.79821%2013.9891%207.0978%2013.846%207.30839%2013.6041L15.7104%203.94965C16.1327%203.46442%2016.0879%202.72326%2015.6103%202.29421Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+            background-repeat: no-repeat;
+            background-position: 2px 2px;
+            background-size: 65%;
+        }
+        .check-input:checked::after {
+            -webkit-animation: click-wave 0.65s;
+            -moz-animation: click-wave 0.65s;
+            animation: click-wave 0.65s;
+            background: #5540c9;
+            content: '';
+            display: block;
+            position: relative;
+            z-index: 100;
+        }
+        @keyframes click-wave {
+            0% {
+                height: 20px;
+                width: 20px;
+                opacity: 0.35;
+                position: relative;
+            }
+            100% {
+                height: 50px;
+                width: 50px;
+                margin-left: -16px;
+                margin-top: -16px;
+                opacity: 0;
+            }
+        }                         
+    }
+}

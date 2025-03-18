@@ -1,0 +1,405 @@
+.checkout{
+    label {
+        display: block;
+        color: $text-color;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.5rem;
+        line-height: 140%;
+        margin-bottom: 0.4rem;
+    }    
+    // estiliza todos os elementos de formulário
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"] {
+        @include input-default(14.5px 17px, 0, $white, 4px);
+        border-color: #2A2352;
+        color: #2A2352;
+        height: auto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 1.8rem;
+    }
+    input[type="submit"], input[type="button"] {
+        background: $purple;
+        border: 2px solid $purple;
+        border-radius: 8px;
+        display: block;
+        width: 100%;
+        font-family: $font-default_bold;
+        font-size: 1.8rem;
+        font-style: normal;
+        color: $white;
+        text-transform: uppercase;
+        transition: all 0.2s ease-in-out;
+        padding: 21px 42px;
+        margin: 6px 0 auto auto;
+        &:hover {
+          background-color: transparent;
+          color: $dark;
+          border: 2px solid $dark;
+        }
+    }
+    .btn.desable{
+      border: 2px solid #f4f4f6;
+      background-color: #f4f4f6;
+      color: #a8a5b8;
+      cursor: not-allowed;
+      &:hover{
+        border: 2px solid #f4f4f6;
+        background-color: #f4f4f6;
+        color: #a8a5b8;
+      }
+    }
+    select{
+        @include input-default();
+        border-color: #2A2352;
+        color: #2A2352;
+        height: 56.2px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 1.8rem;
+        margin-bottom: 0;
+    }
+
+    // Ajuste de cor do placeholder para diversos navegadores
+    input[type="text"]::-webkit-input-placeholder,
+    input[type="email"]::-webkit-input-placeholder,
+    input[type="tel"]::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.8rem;
+        color: #a8a5b8;
+    }
+    input[type="text"]:-moz-placeholder,
+    input[type="email"]:-moz-placeholder,
+    input[type="tel"]:-moz-placeholder,
+    textarea:-moz-placeholder {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.8rem;
+        color: #a8a5b8;
+    }
+    input[type="text"]::-moz-placeholder,
+    input[type="email"]::-moz-placeholder,
+    input[type="tel"]::-moz-placeholder,
+    textarea::-moz-placeholder {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.8rem;
+        color: #a8a5b8;
+    }
+    input[type="text"]:-ms-input-placeholder,
+    input[type="email"]:-ms-input-placeholder,
+    input[type="tel"]:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.8rem;
+        color: #a8a5b8;
+    }
+    input[type="text"]::placeholder,
+    input[type="email"]::placeholder,
+    input[type="tel"]::placeholder,
+    textarea::placeholder {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.8rem;
+        color: #a8a5b8;
+    }
+
+    input:disabled {
+      background-color: #f4f4f6;
+      border: 1px solid #e5e5e5;
+    }
+
+    // Campo Select
+    div.box-select {
+        @include input-default($pad: 0);
+        position: relative;
+        display: inline-block;
+      }
+      div.box-select::after {
+        content: "";
+        width: 100%;
+        height: 40px;
+        position: absolute;
+        right: 12px;
+        top: -1px;
+        background-repeat: no-repeat;
+        background-image: url("../images/seta_select.svg");
+        background-position: right center;
+        z-index: 1;
+      }
+      div.box-select select {
+        border: none;
+        width: 100%;
+        min-height: 40px;
+        padding: 0;
+        z-index: 2;
+        background: 0 0;
+        color: $default-color;
+        position: relative;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        padding: 10px 12px 0 12px;
+        margin-bottom: 0;
+        outline: none;
+        cursor: pointer;
+        option {
+          color: $blue;
+        }
+        option {
+          background: #fff;
+          color: $default-color !important;
+          font-family: $font-default;
+        }
+      }
+
+
+    // Radio buttom
+    input[type="radio"] {
+        display: none; /* Esconde os inputs */
+    }
+    input[type="radio"] + span:before {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 1px;
+        left: 0;
+        border-radius: 50px;
+        background: #fff;
+        border: 3px solid #000;
+        box-sizing: border-box;
+        margin-left: 10px;
+    }
+    input[type="radio"]:checked + span:before {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: 0;
+        top: 1px;
+        background: #000;
+        border: 3px solid rgb(251, 193, 47);
+        box-shadow: 0 0 3px #fff;
+    }
+    // -- radio buttons
+  
+      .form-select{
+        font-family: $font-default;
+        font-size: 1.6rem;
+        height: 40px;
+        width: 100%;
+        option{
+          font-family: $font-default;
+          font-size: 1.6rem;        
+        }
+      }
+      select option {
+        font-family: $font-default;
+        font-size: 1.6rem;       
+      }
+
+      .alert-input{
+        border: #c02323 1px solid !important;
+        background-color: #ff000008 !important;
+        background-image: url('../images/alert_input.svg') !important;
+        background-repeat: no-repeat !important;
+        background-position: right 15px center !important;
+      }
+      .select.alert-input{
+        background-position: right 30px center !important;
+      }
+
+      .secure_number.alert-input{
+        background-image: initial !important;
+      }
+
+      .inp_erro {
+        border-color: #d30404 !important;
+        background-color: rgba(249,244,244,.4784313725) !important;
+      }
+
+      .wrap-input{
+        margin-bottom: 15px;
+      }
+}
+
+#step-00, #step-01, #step-02, #step-03{
+  h1{
+    font-size: 3.0rem;
+  }
+}
+
+#step-00{
+  input[type="submit"], input[type="button"] {
+    background: $purple;
+    border: 2px solid $purple;
+    border-radius: 8px;
+    display: block;
+    width: 100%;
+    font-family: $font-default_bold;
+    font-size: 1.8rem;
+    font-style: normal;
+    color: $white;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in-out;
+    padding: 21px 42px;
+    margin: 20px 0 0 auto;
+    &:hover {
+      background-color: transparent;
+      color: $dark;
+      border: 2px solid $dark;
+    }
+  }
+}
+
+// Hide show password
+.wrap-password {
+  position: relative;
+  .hide-password{
+      display: block;
+      width: 24px;
+      height: 24px;
+      background-image: url('../images/ico-eye_close.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+  .show-password{
+      display: block;
+      width: 24px;
+      height: 24px;
+      background-image: url('../images/ico-eye_open.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+  }    
+}
+#togglePasswordVisibility{
+  position: absolute;
+  top: 40px;
+  right: 28px;
+  cursor: pointer;
+}
+
+
+// Bloco mensagens de erro
+#msg-step-00, #msg-step-01, #msg-step-02, #msg-step-03{
+  span{
+    display: none;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.4rem;
+    background-color: #fbf0f0;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+    .checkout {
+      input[type="submit"], input[type="button"] {
+        width: fit-content;
+      }
+    }
+    #step-00{
+      input[type="submit"], input[type="button"] {
+        width: fit-content;
+      }
+    }
+    #step-00, #step-01, #step-02, #step-03{
+      h1{
+        font-size: 3.5rem;
+      }
+    }      
+}
+// 576px
+
+@include media-breakpoint-up(xl) {
+  #step-00, #step-01, #step-02, #step-03{
+    h1{
+      font-size: 2.9rem;
+      margin-bottom: 8px;
+    }
+  }
+  #step-03{
+    padding-top: 50px;
+  }
+  .checkout{
+    label {
+        font-size: 1.4rem;
+        margin-bottom: 0.4rem;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"] {
+        @include input-default(9px 13px, 0, $white, 4px);
+        font-size: 1.7rem;
+        border-color: #2A2352;
+        color: #2A2352;
+        height: auto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 1.8rem;        
+    }
+    select{
+        @include input-default();
+        border-color: #2A2352;
+        color: #2A2352;
+        height: 42.2px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 1.7rem;
+        margin-bottom: 0;
+    }
+  }  
+}
+// 1200px
+
+@include media-breakpoint-up(xxl) {
+  #step-00, #step-01, #step-02, #step-03{
+    h1{
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+    }
+  }
+  #step-03{
+    padding-top: 0;
+  }  
+  .checkout{
+    label {
+        font-size: 1.5rem;
+        margin-bottom: 0.4rem;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"] {
+        @include input-default(14.5px 17px, 0, $white, 4px);
+        font-size: 1.8rem;
+        border-color: #2A2352;
+        color: #2A2352;
+        height: auto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 1.8rem;        
+    }
+    select{
+      @include input-default();
+      border-color: #2A2352;
+      color: #2A2352;
+      height: 56.2px;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 1.8rem;
+      margin-bottom: 0;
+    }    
+  }  
+}
+// 1400px

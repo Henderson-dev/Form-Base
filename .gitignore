@@ -1,0 +1,21 @@
+# VisualStudioCode
+#.vscode/
+*.code-workspace
+
+# Local History for Visual Studio Code
+.history/
+.ionide/
+
+# Project Paths
+node_modules/
+src/node_modules/*
+#vendor/
+#dist/
+logs/*
+
+# Others
+/package.lock
+/package-lock.json
+/yarn.lock
+/yarn-error.log
+/mix-manifest.json

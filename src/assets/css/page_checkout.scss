@@ -1,0 +1,66 @@
+/*
+//-------------------------------------------------------------------
+@File: Default Styles
+
+@Author: Henderson Torres
+Author E-mail: teconet.arte@gmail.com
+
+//-------------------------------------------------------------------
+*/
+
+// Importa fontes locais, que estão dentro do template Wordpress
+@import '../../_scss/fonts-local';
+
+// Variavéis de configuração do Bootstrap
+@import '../../_scss/variables_checkout';
+
+// Adicionar o Lity CSS
+@import '../../_scss/_components/lity';
+
+// -----------------------------------------------------------
+// Adiciona CSS padrão do Bootstrap
+//@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
+// scss-docs-start import-stack
+// Configuration
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+//@import "../../node_modules/bootstrap/scss/variables-dark";
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/utilities";
+
+// Layout & components
+//@import "../../node_modules/bootstrap/scss/root";
+@import "../../node_modules/bootstrap/scss/reboot";
+//@import "../../node_modules/bootstrap/scss/type";
+@import "../../node_modules/bootstrap/scss/images";
+@import "../../node_modules/bootstrap/scss/containers";
+@import "../../node_modules/bootstrap/scss/grid";
+
+// Utilities
+@import "../../node_modules/bootstrap/scss/utilities/api";
+// -------------------------------------------------------------
+
+// AOS Animation
+//@import '../../node_modules/aos/tema_HTML_2023 _versao_01/sass/aos.scss';
+
+// Swiper slider sass
+// @import '../../node_modules/swiper/swiper.scss';
+
+// Mixins
+@import '../../_scss/_utils/mixins';
+
+// Globals
+@import '../../_scss/globals';
+
+// Components
+@import '../../_scss/_checkout/menu';
+@import '../../_scss/_checkout/modal';
+@import '../../_scss/_checkout/loader';
+@import '../../_scss/_checkout/checkout_base';
+@import '../../_scss/_checkout/details_summary';
+@import '../../_scss/_checkout/checkbox';
+@import '../../_scss/_checkout/inputs_form';
+@import '../../_scss/_checkout/resume';
+@import '../../_scss/_checkout/credit_card_image';

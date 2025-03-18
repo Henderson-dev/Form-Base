@@ -1,0 +1,386 @@
+// padrões iniciais
+html {
+  font-family: $font-default;
+  font-size: 10px;
+  // overflow-x: hidden;
+  scroll-behavior: smooth;
+  background-color: #fff;
+  height: 100%;
+}
+body {
+  font-family: $font-default;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: $text-color;
+  background-color: $white;
+  // largura máxima para telas full HD
+  // max-width: 1920px;
+  margin: 0 auto;
+  // overflow-x: hidden;
+  height: 100%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+// tira o focus de todos os elementos
+*:focus {
+  outline: none;
+}
+// define padrão para todos os textos selecionados no site
+::selection {
+  background-color: $text-color;
+  color: $white;
+}
+// define largura máxima para telas de largura FullHD
+main {
+  // max-width: 1920px;
+  margin: 0 auto;
+  // define altura do menu na versao mobiel
+  // padding-top: 93px;
+  position: relative;
+  z-index: 0;
+}
+section {
+  position: relative;
+}
+
+// Barra de rolagem personalizada
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $text-color;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #F4F4F6;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $text-color;
+  border-radius: 20px;
+  border: 3px solid #F4F4F6;
+}
+// ---------------------------------
+
+
+strong {
+  font-style: normal;
+  font-weight: 600;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+// padrões de elementos de texto globais do projeto
+p {
+  font-family: $font-default;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 150%;
+  letter-spacing: 0.36px;
+  color: $text-default;
+  margin-bottom: 2.2rem;
+}
+h1 {
+  font-family: $font-titles;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 3.8rem;
+  line-height: 110%;
+  letter-spacing: 0;
+  color: $text-color;
+  margin-bottom: 2.2rem;
+}
+h2 {
+  font-family: $font-titles;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 110%;
+  color: $text-color;
+  margin-bottom: 22px;
+}
+h3{
+  color: $dark-ligth;
+  line-height: 120%;
+}
+// Diminui H1 padrão
+.small-title{
+  font-size: 3.4rem;
+}
+
+// Botão base para cosntrução de outros botões
+.btn-base{
+  width: max-content;
+  display: block;
+  font-family: $font-default;
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: 120%;
+  letter-spacing: 0.36px;
+  transition: all 0.2s ease-in-out;
+  border-radius: 0.8rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+}
+
+// botão padrão
+.btn {
+  width: max-content;
+  display: block;
+  background-color: $purple;
+  font-family: $font-default;
+  font-size: 1.6rem;
+  line-height: 100%;
+  letter-spacing: 0.36px;
+  color: $white;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  padding: 19px 40px;
+  border: 2px solid $purple;
+  border-radius: 0.8rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    background-color: transparent;
+    color: $dark;
+    border: 2px solid $dark;
+  }
+}
+
+// Botão invertido
+.btn-inverse {
+  width: max-content;
+  display: block;
+  background-color: $primary;
+  font-family: $font-default;
+  font-size: 1.6rem;
+  line-height: 100%;
+  letter-spacing: 0.36px;
+  color: $text-color;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  padding: 19px 40px;
+  border: 2px solid $text-color;
+  border-radius: 0.8rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    background-color: $purple;
+    color: $primary;
+    border: 2px solid $purple;
+  }
+}
+.btn-inverse.active{
+  text-decoration: none;
+  background-color: $purple;
+  color: $primary;
+  border: 2px solid $purple;
+}
+
+// Botão dark
+.btn-dark{
+  background-color: $dark;
+  color: $white;
+  padding: 16px 24px;
+  border: 2px solid $dark;
+  border-radius: 0.8rem;
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    background-color: transparent;
+    color: $dark;
+    border: 2px solid $dark;
+  }  
+}
+
+
+// Risca preço
+.promotion-price{
+  text-decoration: line-through;
+}
+
+// Margens default
+.margin-top_default{
+  padding-top: 72px;
+}
+.margin-bottom_default{
+  padding-bottom: 72px;
+}
+
+// Fundo cinza padrão
+.bg-gray{
+  background-color: $gray-light;
+}
+.bg-gray-100{
+  background-color: #F9FAFA;
+}
+
+.bg-gray-200{
+  background-color: #f4f4f6;
+}
+
+
+// Reseta os paddings padrão do container na versão mobile
+.container {
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+
+// Container deslizante no mobile
+.container-slidescroll {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x proximity;
+}
+
+.fixed-right{
+  position: absolute;
+  right: -30px;
+}
+
+
+.link-arrow{
+  width: fit-content;          
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 2.4rem;
+  color: $purple;
+  margin-bottom: 1.65rem;
+  &::after {
+      content: none;
+  }
+  svg{
+      transition: transform .2s ease-in-out;
+      margin-left: 15px;
+  }
+  &:hover{
+    text-decoration: none;
+    color: $purple;
+  }
+  &:hover svg{
+      transform: translate3d(5px, 0, 0);
+  }  
+}
+
+.white-bg{
+  background-color: $white !important;
+}
+
+// Ajuste de iframe dentro do modal
+.modal-body{
+  iframe{
+    width: 100%;
+    height: 100%;
+    min-height: 640px;
+    min-width: 640px;
+    border: none;
+  }
+  #form-arqsign-english-exchange-e8f40f74703a038ea155 {
+    min-width: 340px;
+    h2{
+      font-size: 24px !important;
+    }
+  }
+}
+
+
+@include media-breakpoint-up(sm) {
+  .btn_green{
+    padding: 13px 25px 15px;
+  }  
+}
+// 576px
+
+
+@include media-breakpoint-up(lg) {
+  // padrões do projeto
+  main {
+    padding-top: 0;
+  }  
+  p {
+    font-size: 1.6rem;
+    margin-bottom: 3.5rem;
+  }
+  h1 {
+    font-size: 5.2rem;
+    line-height: 110%;
+    color: $text-color;
+    margin-bottom: 4.7rem;
+  }
+  h2 {
+    font-size: 3.4rem;
+    margin-bottom: 24px;
+  }
+  .small-title{
+    font-size: 4.2rem;
+  }
+  // botão padrão
+  .btn {
+    width: max-content;
+    font-size: 1.8rem;
+    letter-spacing: 0.54px;
+    padding: 19px 40px;
+  }
+  // Reseta os paddings padrão do container na versão mobile
+  .container {
+    padding-right: initial;
+    padding-left: initial;
+  }  
+
+}
+// 992px
+
+
+@include media-breakpoint-up(xl) {
+  // Container deslizante no mobile
+  .container-slidescroll {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+}
+// 1200px
+
+// Reseta largura máxima do container para telas de 1680px de largura
+@media (min-width: 1680px) {
+  .container {
+    max-width: 1580px;
+  }
+  .small-title{
+    font-size: 5.2rem;
+  }
+}
+
+// Reseta largura máxima do container para telas de 1920px de largura
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1640px;
+  }
+}
+
+
+// Ajusta largura padrão da janela modal, sobrepoe codigos do Bootrasp
+.modal-dialog {
+  max-width: fit-content;
+}

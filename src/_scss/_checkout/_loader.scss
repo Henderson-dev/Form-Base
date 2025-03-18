@@ -1,0 +1,16 @@
+// Custom Loader generator
+// https://www.cssportal.com/css-loader-generator/
+.custom-loader {
+    width: 16px;
+    height: 16px;
+    background: #766DF4;
+    border-radius: 50%;
+    box-shadow: 28px 0 #766DF422,-28px 0 #766DF4;
+    animation: d5 1s infinite linear alternate;
+    margin-bottom: 30px;
+}
+@keyframes d5 {
+    0% {box-shadow: 28px 0 #766DF4,-28px 0 #766DF422;background: #766DF4}
+    33%{box-shadow: 28px 0 #766DF4,-28px 0 #766DF422;background: #766DF422}
+    66%{box-shadow: 28px 0 #766DF422,-28px 0 #766DF4;background: #766DF422}
+}

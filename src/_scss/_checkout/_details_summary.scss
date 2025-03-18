@@ -1,0 +1,167 @@
+
+.wrap-details{
+    width: 98%;
+    details{
+        margin-right: 10px;
+    }
+    .btn{
+        width: 100%;
+        font-size: 1.4rem;
+        text-align: center;
+        padding: 13px 12px;
+        height: 44px;
+    }
+}
+
+// https://codepen.io/felipefialho/pen/yLgxdzR
+
+details{
+    width: 100%;
+    summary{
+        padding: 16px 8px 16px 16px;
+        list-style: none;
+        border-radius: 8px;
+        background: #fbfaff;
+        box-shadow: 0px 2px 4px 0px rgba(97, 97, 97, 0.20), 0px 1px 2px 0px rgba(97, 97, 97, 0.20);
+        margin-bottom: 6px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        .summary-title{
+            display: flex;
+            align-items: center;
+            svg{
+                margin-right: 12px;
+                margin-bottom: 0;
+            }
+            h3{
+                color: #1D1D1B;
+                font-size: 1.6rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 120%;
+                margin-bottom: 0;
+                padding: 0;
+            }
+            h4{
+                color: #1D1D1B;
+                font-size: 1.4rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 120%;
+                margin-bottom: 0;
+                padding: 0;                
+            }
+        }
+        span{
+            transition: transform 0.25s ease;
+            svg{
+                transition: transform 0.25s ease;
+                transform: rotate(0deg);                
+            }                      
+        }
+        &:hover{
+            background-color: #edeaf9;
+        }
+    }
+    &[open]{
+        transition: all 1.2s ease;
+        span{
+            svg{
+                transition: transform 0.25s ease;
+                transform: rotate(-180deg);                
+            }            
+        }
+    }
+    .collapse-description{
+        padding: 16px 8px;
+        width: 100%;
+        p{
+            margin-bottom: 2.2rem;
+        }
+        .list-columns{
+            column-count: 2;
+            column-gap: 40px;
+            list-style-type: none;
+            padding: 0;
+            li{
+                margin-bottom: 30px;
+                h4{
+                    font-family: $font-default_bold;
+                    font-size: 1.8rem;
+                    margin-bottom: 12px;
+                    padding-bottom: 5px;
+                    //border-bottom: 1px solid #eee;
+                }
+            }
+            li > ul {
+                margin: 0;
+                padding: 0 0 0 20px;
+                list-style: disc;
+                li{
+                    font-size: 1.4rem;
+                    margin-bottom: 8px;
+                }
+            }
+                     
+        }
+        .column-break::before {
+            content: '';
+            display: block;
+            break-before: column;
+            page-break-before: always;
+        }             
+    }
+}
+
+details:not([open]) .collapse-description{
+    height:0px !important;
+}
+
+
+// Ajuste dentro do modal
+.modal-plans{
+    .modal-inner{
+        svg {
+            margin-bottom: 0;
+        }
+    }
+}  
+
+
+@include media-breakpoint-up(md) {
+    .wrap-details{
+        .btn{
+            width: 210px;
+            font-size: 1.4rem;
+            padding: 16px 12px;
+            height: 50px;
+        }
+    }    
+    details{
+        width: 97%;
+        summary{
+            padding: 18px;
+            .summary-title{
+                h4{
+                    font-size: 1.6rem;
+                }               
+            }            
+        }
+        .collapse-description{
+            padding: 16px 32px 20px 20px;
+            width: calc(100% + 180px);
+        }
+    }
+}
+
+
+@include media-breakpoint-up(lg) {
+    details{
+        summary{
+            padding: 10px 20px;
+        }
+    }
+}
+// 992px
