@@ -15,7 +15,7 @@ Author E-mail: teconet.arte@gmail.com
 @import '../../_scss/variables_checkout';
 
 // Adicionar o Lity CSS
-@import '../../_scss/_components/lity';
+// @import '../../_scss/_components/lity';
 
 // -----------------------------------------------------------
 // Adiciona CSS padrão do Bootstrap
@@ -55,12 +55,8 @@ Author E-mail: teconet.arte@gmail.com
 @import '../../_scss/globals';
 
 // Components
-@import '../../_scss/_checkout/menu';
 @import '../../_scss/_checkout/modal';
 @import '../../_scss/_checkout/loader';
 @import '../../_scss/_checkout/checkout_base';
-@import '../../_scss/_checkout/details_summary';
 @import '../../_scss/_checkout/checkbox';
 @import '../../_scss/_checkout/inputs_form';
-@import '../../_scss/_checkout/resume';
-@import '../../_scss/_checkout/credit_card_image';

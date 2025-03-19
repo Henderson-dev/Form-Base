@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <select name="billing_state" id="billing_state" class="state_select arquivar_billing_state select" data-type="state" aria-required="true" autocomplete="address-level1" data-placeholder="Informe seu estado" data-input-classes="arquivar_billing_state" data-label="Estado" tabindex="11">
+        <option value="">Selecione um estado…</option>
+        <option value="AC">Acre</option>
+        <option value="AL">Alagoas</option>
+        <option value="AP">Amapá</option>
+        <option value="AM">Amazonas</option>
+        <option value="BA">Bahia</option>
+        <option value="CE">Ceará</option>
+        <option value="DF">Distrito Federal</option>
+        <option value="ES">Espírito Santo</option>
+        <option value="GO">Goiás</option>
+        <option value="MA">Maranhão</option>
+        <option value="MT">Mato Grosso</option>
+        <option value="MS">Mato Grosso do Sul</option>
+        <option value="MG">Minas Gerais</option>
+        <option value="PA">Pará</option>
+        <option value="PB">Paraíba</option>
+        <option value="PR">Paraná</option>
+        <option value="PE">Pernambuco</option>
+        <option value="PI">Piauí</option>
+        <option value="RJ">Rio de Janeiro</option>
+        <option value="RN">Rio Grande do Norte</option>
+        <option value="RS">Rio Grande do Sul</option>
+        <option value="RO">Rondônia</option>
+        <option value="RR">Roraima</option>
+        <option value="SC">Santa Catarina</option>
+        <option value="SP">São Paulo</option>
+        <option value="SE">Sergipe</option>
+        <option value="TO">Tocantins</option>
+    </select>
+
+
+    <select name="billing_city" id="billing_city" class="arquivar_billing_city select">
+        <option value="">Informe sua cidade</option>
+    </select>
+
+      
+    
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+  
+    const stateSelect = document.getElementById("billing_state");
+    const citySelect = document.getElementById("billing_city");
+
+    async function carregarCidades(uf) {
+        
+        const urlCidades = `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${uf}/municipios/?orderBy=nome`;
+
+        // Limpa opções antigas
+        citySelect.innerHTML = `<option value="">Informe sua cidade</option>`;
+        citySelect.disabled = true;
+
+        try {
+            const response = await fetch(urlCidades);
+
+            if (!response.ok) {
+                throw new Error("Erro ao buscar cidades");
+            }
+
+        const cidades = await response.json();
+
+        cidades.forEach((cidade) => {
+            const option = document.createElement("option");
+            option.value = cidade.nome;
+            option.textContent = cidade.nome;
+            //option.classList.add("city_option");
+            citySelect.appendChild(option);
+        });
+
+        // Se houver cidade salva em localStorage, seleciona ela
+        if (localStorage.getItem("billing_city") && localStorage.getItem("billing_city") !== "undefined") {
+            const cidadeSalva = localStorage.getItem("billing_city");
+            citySelect.value = cidadeSalva;
+        } else {
+            citySelect.value = "";
+            citySelect.querySelector("option[value='']").selected = true;
+        }
+        } catch (error) {
+            console.error("Erro ao carregar cidades:", error);
+        } finally {
+            citySelect.disabled = false;
+        }
+    }
+
+
+    // Monitora mudança no campo Estado
+    stateSelect.addEventListener("change", function () {
+        const uf = this.value;
+
+        if (uf) {
+            carregarCidades(uf);
+        } else {
+            citySelect.innerHTML = `<option value="">Informe sua cidade</option>`;
+            citySelect.disabled = true;
+        }
+    });
+
+    // Se já tiver algum estado carregado na página (caso de edição)
+    if (stateSelect.value !== "") {
+        carregarCidades(stateSelect.value);
+    }
+
+    // Monitora mudança no campo Cidade
+});
+
+</script>
+
+</body>
+</html>

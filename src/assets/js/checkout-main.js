@@ -4,11 +4,23 @@
 //------------------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", async function () {
 
-    
+
+    // Monitora link de modal de termos
+    linkTerms();
+   
     // Monitorar o enter na página e ativa o clique do botão dos passos do formulário
     monitorarEnter();
 
+    // Chama a função para definir o foco no campo de Nome e Sobrenome
+    focusInInput('billing_first_name');
+
+    // Adiciona mascara de telefone
+    addMaskPhone('billing_phone');
+
     // Adicionando monitoramento aos campos do primeiro formulário para limpar mensagens de erro ao digitar no campo
+    monitorInputFields("billing_first_name", "msg-step-02", "text");
+    monitorInputFields("billing_phone", "msg-step-02", "text");
+    monitorInputFields("billing_email", "msg-step-02", "text");
     monitorInputFields("billing_persontype", "msg-step-02", "select");
     monitorInputFields("billing_cnpj", "msg-step-02", "text");
     monitorInputFields("billing_cpf", "msg-step-02", "text");
@@ -19,6 +31,35 @@ document.addEventListener("DOMContentLoaded", async function () {
     monitorInputFields("billing_neighborhood", "msg-step-02", "text");
     monitorInputFields("billing_state", "msg-step-02", "select");
     monitorInputFields("billing_city", "msg-step-02", "select");
+
+
+    // --------------------------------------------------------------------------
+    // Adiciona um evento de input ao campo de texto para verificar se o nome
+    // possui mais de uma palavra
+
+    // Obtém a referência ao campo de texto no formulário
+    let inputName = document.getElementById('billing_first_name');
+    inputName.addEventListener('blur', function(event) {
+        // Chama a função verificarNomeCompleto com o evento e o nome do campo
+        if (inputName.value.trim() !== "") {
+            validateFullName(event, 'billing_first_name', 'msg-step-02');
+        }
+    });
+
+    
+    // -----------------------------------------------------------
+    // Monitora digitação no campo telefone
+    // -----------------------------------------------------------
+    let inputTelefone = document.getElementById('billing_phone');
+    if (inputTelefone) {
+        monitorarCampoTelefone(inputTelefone, 'msg-step-02');
+    }
+
+
+    // -----------------------------------------------------------
+    // Monitora digitação no campo E-mail
+    // -----------------------------------------------------------
+    monitorarCampoEmail('billing_email', 'msg-step-02');
 
 
 
@@ -124,17 +165,15 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
     });
 
-    // Se já tiver algum estado carregado na página (caso de edição)
-    // if (stateSelect.value !== "") {
-    //     carregarCidades(stateSelect.value, "billing_city");
-    // }    
-
 
     const btnAvancar2 = document.getElementById("action-step-02");
     btnAvancar2.addEventListener("click", function () {
 
         // Define campos que precisam ser validados
         const fieldsAdress = [
+            { input_name: 'billing_first_name', input_type: 'text', input_msg: 'Informe o seu nome e sobrenome' },
+            { input_name: 'billing_phone', input_type: 'text', input_msg: 'Preenhca o telefone de contato no formato solicitado.' },
+            { input_name: 'billing_email', input_type: 'email', input_msg: 'Informe o campo e-mail' },                
             { input_name: 'billing_persontype', input_type: 'select', input_msg: 'Selecione o tipo de documento' },
             { input_name: 'billing_postcode', input_type: 'text', input_msg: 'Informe o campo CEP' },
             { input_name: 'billing_address_1', input_type: 'text', input_msg: 'Informe o campo Endereço' },
@@ -148,20 +187,15 @@ document.addEventListener("DOMContentLoaded", async function () {
         const validationfieldsAdress = validateForm(fieldsAdress, 'msg-step-02');
                 
         if (validationfieldsAdress.valid) {
-            showStepMain("step-03");
 
-            // Define os links que devem estar ativos nos passos de compra
-            if(typePurchase == "credits"){
-                const steps = ['step-link-0', 'step-link-1', 'step-link-2', 'step-link-3'];
-                atictiveSteps(steps);
-            }else{
-                const steps = ['step-link-1', 'step-link-2', 'step-link-3'];
-                atictiveSteps(steps);            
+            let acceptTerms = isCheckboxChecked('accept_terms', 'msg-step-02', 'Para prosseguir, você deve aceitar os termos e condições da nossa Política de Privacidade' );
+            
+            // Se os termos foram aceitos
+            if (acceptTerms) {
+                alert("Formulário validado com sucesso!");
+                console.log("Formulário validado com sucesso!");
             }
             
-            // Adiciona descrição do plano no resumo
-            const planDescrptionResume = document.querySelector('.plan-description').classList.remove('hidden-element');
-
         }
 
     });

@@ -9,15 +9,36 @@
 </head>
 <body>
     
-    <main class="d-flex align-items-center">
+    <main>
 
         <div class="container">
 
             <form id="checkout-primary" name="checkout" method="post" class="row checkout d-flex justify-content-center" action="" enctype="multipart/form-data" novalidate="novalidate">           
 
-                <section id="step-02" class="checkout_content col-xl-6 d-flex flex-column justify-content-center mb-5 pb-3 mb-xl-0 pb-xl-0">
+                <section id="step-02" class="checkout_content col-xl-6 mb-5 pb-3 mb-xl-0 pb-xl-0">
 
-                        <section class="row g-5">
+                        <section class="row">
+                            <h1>
+                                Para começar,<br class="d-block d-lg-none d-xxl-block"> complete o cadastro
+                            </h1>
+
+                            <div class="col-md-6">
+                                <label for="billing_first_name">Nome e sobrenome *</label>
+                                <input type="text" class="input-text" name="billing_first_name" id="billing_first_name" placeholder="Informe seu nome e sobrenome" value="" data-type="text" aria-required="true" autocomplete="given-name" bl-field-name="nome" tabindex="1">                            
+                            </div>
+                            <!-- Nome e sobrenome -->
+                             
+                            <div class="col-md-6">
+                                <label for="billing_phone">Telefone *</label>
+                                <input type="tel" class="input-text" name="billing_phone" id="billing_phone" placeholder="+55 (__) _____-____" value="" data-type="tel" aria-required="true" autocomplete="tel" data-intl-tel-input-id="0" tabindex="2">
+                            </div>
+                            <!-- Telefone -->   
+                             
+                            <div class="col-md-12">
+                                <label for="billing_email">E-mail *</label>
+                                <input type="email" class="input-text" name="billing_email" id="billing_email" placeholder="Indique seu melhor e-mail" value="" data-type="email" aria-required="true" autocomplete="email" bl-field-name="email" tabindex="3">
+                            </div>
+                            <!-- E-mail -->                            
 
                             <div class="col-md-6">
                                 <label for="billing_persontype">Tipo de Documento *</label>
@@ -132,6 +153,17 @@
                             </div>
                             <!-- Cidade -->
 
+                            <div class="col-12 wrap-checkbox">
+                                <label class="check-purple mb-5">
+                                        <input type="checkbox" name="accept_terms" id="accept_terms" value="concentimento" class="check-input">
+                                        <span class="label_acept" onclick="checkboxClick('accept_terms', 'msg-step-01')">
+                                            Concordo em receber comunicações de acordo com meus interesses. Ao avançar confirmo que li e concordo com os <a href="#" id="box-terms" title="Termos, Condições" aria-label="Termos, Condições">Termos, Condições</a> e <a href="#" id="box-policy" title="Política de Privacidade da ArqSign" aria-label="Política de Privacidade da ArqSign">Política de Privacidade da ArqSign</a>.
+                                        </span>
+                                </label>
+                                <!-- <input type="button" class="btn" name="" id="action-step-01" value="Avançar" data-value="Avançar"> -->
+                            </div>
+                            <!-- // Acept terms -->
+
                             <div class="col-12">
                                 <input type="button" class="btn" name="" id="action-step-02" value="Enviar" data-value="Enviar">
                             </div>
@@ -153,7 +185,7 @@
 
 
     <!-- Modal loader  checked -->
-    <!-- <input type="checkbox" id="target-modal-loader" >
+    <input type="checkbox" id="target-modal-loader" >
     <div class="modal-loader">
         <div class="modal-inner">
             <div class="custom-loader"></div>
@@ -163,7 +195,41 @@
             </div>
         </div>
         <label for="target-modal-plans" class="overlay-modal"></label>
-    </div> -->
+    </div>
+
+
+
+    <!-- Modal de Termos -->
+    <input type="checkbox" id="target-modal-terms">
+    <div class="modal-terms">
+        <div class="modal-inner">
+          <label for="target-modal-terms" class="close-modal"></label>
+          <h2>Termos e Condições</h2>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima, repellat fugit, distinctio harum id saepe molestiae recusandae eius iste similique, veniam nesciunt ex molestias facilis nihil quas eos magnam praesentium.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos soluta accusamus natus saepe quae. Praesentium quae adipisci distinctio explicabo, dolores dolorum alias voluptates aliquid debitis iure delectus dolor, vero impedit?
+          </p>
+        </div>
+        <label for="target-modal-terms" class="overlay-modal"></label>
+    </div>
+
+    <!-- Modal de Política de Privacidade -->
+    <input type="checkbox" id="target-modal-policy">
+    <div class="modal-policy">
+        <div class="modal-inner">
+            <label for="target-modal-policy" class="close-modal"></label>
+            <h2>Política de Privacidade</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam labore possimus laboriosam eum at quis quibusdam! Ab quo quam modi dignissimos quibusdam quas velit. Magnam et accusamus velit sapiente odio?
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore voluptas, cupiditate illum ullam quisquam distinctio laboriosam, error exercitationem veniam eligendi eaque similique sed unde aut ratione commodi tenetur quas corporis.
+            </p>
+        </div>
+        <label for="target-modal-terms" class="overlay-modal"></label>
+    </div>    
 
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.4.0/purify.min.js"></script> -->
@@ -175,6 +241,6 @@
     <script type="text/javascript" src="assets/js/checkout-funtions.js"></script>
 
     <!-- Função executada como depenência de desenvolvimento -->
-    <script type="text/javascript" src="assets/js/function-dev-dependence.js"></script>    
+    <script type="text/javascript" src="assets/js/function-dev-dependence.js"></script>
 </body>
 </html>
