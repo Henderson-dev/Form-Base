@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <title>Document</title>
-
     <link rel="stylesheet" id="style-css" href="assets/css/style.min.css" type="text/css" media="screen" />    
 </head>
 <body>
@@ -13,11 +13,11 @@
 
         <div class="container">
 
-            <form id="checkout-primary" name="checkout" method="post" class="row checkout woocommerce-checkout d-flex justify-content-center" action="" enctype="multipart/form-data" novalidate="novalidate"></form>            
+            <form id="checkout-primary" name="checkout" method="post" class="row checkout d-flex justify-content-center" action="" enctype="multipart/form-data" novalidate="novalidate">           
 
-                <section id="step-02" class="checkout_content col-xl-6 d-flex flex-column justify-content-center mb-5 pb-3 mb-xl-0 pb-xl-0 hidden-element">
+                <section id="step-02" class="checkout_content col-xl-6 d-flex flex-column justify-content-center mb-5 pb-3 mb-xl-0 pb-xl-0">
 
-                        <section class="woocommerce-billing-fields row g-5">
+                        <section class="row g-5">
 
                             <div class="col-md-6">
                                 <label for="billing_persontype">Tipo de Documento *</label>
@@ -133,7 +133,7 @@
                             <!-- Cidade -->
 
                             <div class="col-12">
-                                <input type="button" class="btn" name="" id="action-step-02" value="Avançar" data-value="Avançar">
+                                <input type="button" class="btn" name="" id="action-step-02" value="Enviar" data-value="Enviar">
                             </div>
 
                             <div id="msg-step-02" class="col-12 d-flex justify-content-center">
@@ -152,11 +152,25 @@
     </main>
 
 
+    <!-- Modal loader  checked -->
+    <!-- <input type="checkbox" id="target-modal-loader" >
+    <div class="modal-loader">
+        <div class="modal-inner">
+            <div class="custom-loader"></div>
+            <div class="custom-info">
+                <h2>Aguarde...</h2>
+                <span></span>
+            </div>
+        </div>
+        <label for="target-modal-plans" class="overlay-modal"></label>
+    </div> -->
+
+
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.4.0/purify.min.js"></script> -->
     <script type="text/javascript" src="assets/js/purify.min.js"></script>
     <!-- <script src="https://unpkg.com/imask"></script> -->
     <script type="text/javascript" src="assets/js/imask.js"></script>
-    <script type="text/javascript" src="assets/js/card.js"></script>
+    <!-- <script type="text/javascript" src="assets/js/card.js"></script> -->
     <script type="text/javascript" src="assets/js/checkout-main.js"></script>
     <script type="text/javascript" src="assets/js/checkout-funtions.js"></script>
 
