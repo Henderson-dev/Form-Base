@@ -22,17 +22,18 @@ document.addEventListener("DOMContentLoaded", function () {
     // Exemplo de array com os campos a serem preenchidos
     const camposParaPreencher = [
         
-        ["billing_first_name", "João Silva"],
+
+        ["billing_first_name", "Carlos Drummond de Andrade"],
         ["billing_phone", "(99) 99999-9999"],
-        ["billing_email", "joao@email.com"],
+        ["billing_email", "carlosdrummond@email.com"],
         ["accept_terms", true, "checkbox"],
         ["billing_persontype", "2", "select"],
         ["billing_cnpj", "57.937.689/0001-00"],
         ["billing_cpf", "074.718.000-89"],
         ["billing_company", "Empresa Ltda"],
-        ["billing_postcode", "31080-310"],
-        ["billing_address_1", "Rua Nova Serrana"],
-        ["billing_number", "50"],
+        ["billing_postcode", "31080-300"],
+        ["billing_address_1", "Rua Matutina"],
+        ["billing_number", "100"],
         ["billing_neighborhood", "Santa Inês"],
         ["billing_state", "MG", "select"],
         ["billing_city", "Belo Horizonte", "select"]
